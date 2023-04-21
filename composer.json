@@ -1,5 +1,5 @@
 {
-    "name": "hamstra-api/horrentotaal",
+    "name": "hamstra-api",
     "require-dev": {
         "symfony/console": "*"
     },
