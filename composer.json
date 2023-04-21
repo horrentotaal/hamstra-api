@@ -1,5 +1,8 @@
 {
     "name": "hamstra-api/horrentotaal",
+    "require-dev": {
+        "symfony/console": "*"
+    },
     "description": "",
     "keywords": [
         "swagger",
