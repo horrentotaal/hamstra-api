@@ -1,5 +1,5 @@
 {
-    "name": "hamstra-api",
+    "name": "hamstra-api/horrentotaal",
     "description": "",
     "keywords": [
         "swagger",
@@ -7,12 +7,12 @@
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "http://horrentotaal.nl",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "Horrentotaal contributers",
+            "homepage": "https://github.com/horrentotaal/hamstra-api"
         }
     ],
     "require": {
