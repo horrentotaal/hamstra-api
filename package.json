@@ -2,7 +2,6 @@
   "name": "hamstra-api",
   "version": "1.0.3",
   "description": "Hamstra API ",
-  "main": "index.js",
   "publishConfig": {
     "@ThomasKammen:registry": "https://npm.pkg.github.com"
   },
