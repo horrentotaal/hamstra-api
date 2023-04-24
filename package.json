@@ -6,8 +6,7 @@
   "publishConfig": {
     "@ThomasKammen:registry": "https://npm.pkg.github.com"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "author": "Yorway",
   "license": "ISC",
@@ -18,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/horrentotaal/hamstra-api.git"
+    "url": "git+https://github.com/horrentotaal/hamstra-api.git"
   },
   "bugs": {
     "url": "https://github.com/horrentotaal/hamstra-api/issues"
