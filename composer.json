@@ -1,6 +1,8 @@
 {
     "name": "hamstra-api/horrentotaal",
-    "description": "",
+    "version": "1,0,0",
+    "description": "Horrentotaal hamsta API",
+    "private": false,
     "keywords": [
         "swagger",
         "php",
@@ -32,5 +34,9 @@
     },
     "autoload-dev": {
         "psr-4": { "Swagger\\Client\\" : "test/" }
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/",
+        "access": "public"
     }
 }
