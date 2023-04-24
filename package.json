@@ -7,7 +7,6 @@
     "@ThomasKammen:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "test": "Test successfull"
   },
   "keywords": [],
   "author": "Yorway",
