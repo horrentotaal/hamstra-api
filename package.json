@@ -1,6 +1,6 @@
 {
   "name": "hamstra-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hamstra API ",
   "main": "index.js",
   "publishConfig": {
