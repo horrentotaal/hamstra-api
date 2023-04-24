@@ -28,6 +28,5 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
       - run: npm publish
-      - run: echo "$(sed 's/\(_authToken=\)[a-z0-9]*\($\)/\1${{ env.GITHUB_TOKEN }}\2/g' .npmrc)" > .npmrc
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
