@@ -1,6 +1,6 @@
 {
   "name": "@horrentotaal/hamstra-api",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Horrentotaal hamstra API",
   "publishConfig": {
     "@ThomasKammen:registry": "https://npm.pkg.github.com"
