@@ -1,6 +1,6 @@
 {
     "name": "horrentotaal/hamstra-api",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "Horrentotaal hamstra API",
     "private": false,
     "keywords": [
@@ -30,10 +30,10 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "HamstraApi\\" : "lib/" }
+        "psr-4": { "Swagger\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "HamstraApi\\" : "test/" }
+        "psr-4": { "Swagger\\Client\\" : "test/" }
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/",
