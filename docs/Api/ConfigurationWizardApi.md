@@ -1,6 +1,6 @@
 # Swagger\Client\ConfigurationWizardApi
 
-All URIs are relative to *https://refactor.api.hamstraonline.vmcluster.nl*
+All URIs are relative to *https://staging.api.hamstraonline.vmcluster.nl*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **configurationWizardGet**
-> \Swagger\Client\Model\ConfigurationWizardEmbedUrl[] configurationWizardGet($language)
+> \Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[] configurationWizardGet($language)
 
 Get embedurl for customer based on APIkey authentication
 
@@ -17,16 +17,10 @@ Get embedurl for customer based on APIkey authentication
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
-
 $apiInstance = new Swagger\Client\Api\ConfigurationWizardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $language = "language_example"; // string | ISO 639-1 code for language. Currently supported: nl and fr
 
@@ -47,11 +41,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ConfigurationWizardEmbedUrl[]**](../Model/ConfigurationWizardEmbedUrl.md)
+[**\Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]**](../Model/HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl.md)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey)
+No authorization required
 
 ### HTTP request headers
 

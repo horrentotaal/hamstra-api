@@ -1,19 +1,19 @@
 # Swagger\Client\ProductApi
 
-All URIs are relative to *https://refactor.api.hamstraonline.vmcluster.nl*
+All URIs are relative to *https://staging.api.hamstraonline.vmcluster.nl*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**productGetAvailableProducts**](ProductApi.md#productGetAvailableProducts) | **GET** /api/product | Get the available products for the authenticated user
 [**productGetById**](ProductApi.md#productGetById) | **GET** /api/product/{productId} | Get the details of a given product
 [**productGetBySku**](ProductApi.md#productGetBySku) | **GET** /api/product/sku/{sku} | Get the product by product code
-[**productGetConfigurationAsync**](ProductApi.md#productGetConfigurationAsync) | **GET** /api/product/{productId}/configuration | Get the configuration of a given product
-[**productGetConfigurationAsync_0**](ProductApi.md#productGetConfigurationAsync_0) | **POST** /api/product/{productId}/configuration | Get the configuration of a given product
+[**productGetConfigurationAsync**](ProductApi.md#productGetConfigurationAsync) | **GET** /api/product/{productId}/configuration | 
+[**productGetConfigurationAsync_0**](ProductApi.md#productGetConfigurationAsync_0) | **POST** /api/product/{productId}/configuration | 
 [**productGetValidationMessagesAsync**](ProductApi.md#productGetValidationMessagesAsync) | **GET** /api/product/validationMessages | Get the product option validation messages
 
 
 # **productGetAvailableProducts**
-> \Swagger\Client\Model\Product[] productGetAvailableProducts()
+> \Swagger\Client\Model\HamstraAPIModelsProductsProduct[] productGetAvailableProducts()
 
 Get the available products for the authenticated user
 
@@ -22,16 +22,10 @@ Get the available products for the authenticated user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
-
 $apiInstance = new Swagger\Client\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 
 try {
@@ -48,11 +42,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\Product[]**](../Model/Product.md)
+[**\Swagger\Client\Model\HamstraAPIModelsProductsProduct[]**](../Model/HamstraAPIModelsProductsProduct.md)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -62,7 +56,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetById**
-> \Swagger\Client\Model\ProductDetail productGetById($product_id, $consumer_price, $include_wizard_items, $full_detail)
+> \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail productGetById($product_id, $consumer_price, $include_wizard_items, $full_detail)
 
 Get the details of a given product
 
@@ -73,16 +67,10 @@ When 'fullDetail' is true the product options will be included.  The product opt
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
-
 $apiInstance = new Swagger\Client\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $product_id = 56; // int | The ID of the product
 $consumer_price = true; // bool | Show the consumer price instead of salesprice
@@ -109,11 +97,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ProductDetail**](../Model/ProductDetail.md)
+[**\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail**](../Model/HamstraAPIModelsProductsProductDetail.md)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -123,7 +111,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetBySku**
-> \Swagger\Client\Model\ProductDetail productGetBySku($sku)
+> \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail productGetBySku($sku)
 
 Get the product by product code
 
@@ -134,16 +122,10 @@ This product detail does not contain the option list
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
-
 $apiInstance = new Swagger\Client\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $sku = "sku_example"; // string | The product code
 
@@ -164,11 +146,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ProductDetail**](../Model/ProductDetail.md)
+[**\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail**](../Model/HamstraAPIModelsProductsProductDetail.md)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -178,35 +160,28 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetConfigurationAsync**
-> \Swagger\Client\Model\ProductConfig productGetConfigurationAsync($product_id, $current_config_consumer_price, $current_config_without_discount, $current_config_options)
+> \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig productGetConfigurationAsync($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options)
 
-Get the configuration of a given product
 
-This endpoint will return the configuration of the product with the available options and validation messages based on the provided config.  When the config changes you can reflect the changes against this endpoint.  This endpoint will only supply the available options and not all. Some options might only be avaible within a certain height or width.                When all options are valid a price will be given.                Sample of current config:                    POST /product/1/configuration      {         \"consumerPrice\": false,         \"withoutDiscount\": false,         \"options\": [             {                 \"option\": \"Width\",                 \"value\": 1200             }         ]      }
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
-
 $apiInstance = new Swagger\Client\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$product_id = 56; // int | The ID of the product
+$product_id = 56; // int | 
+$include_wizard_items = true; // bool | 
 $current_config_consumer_price = true; // bool | 
 $current_config_without_discount = true; // bool | 
 $current_config_options = array(new \stdClass); // object[] | 
 
 try {
-    $result = $apiInstance->productGetConfigurationAsync($product_id, $current_config_consumer_price, $current_config_without_discount, $current_config_options);
+    $result = $apiInstance->productGetConfigurationAsync($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productGetConfigurationAsync: ', $e->getMessage(), PHP_EOL;
@@ -218,18 +193,19 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| The ID of the product |
+ **product_id** | **int**|  |
+ **include_wizard_items** | **bool**|  | [optional]
  **current_config_consumer_price** | **bool**|  | [optional]
  **current_config_without_discount** | **bool**|  | [optional]
  **current_config_options** | [**object[]**](../Model/object.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\ProductConfig**](../Model/ProductConfig.md)
+[**\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig**](../Model/HamstraAPIModelsProductsProductConfig.md)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -239,33 +215,26 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetConfigurationAsync_0**
-> \Swagger\Client\Model\ProductConfig productGetConfigurationAsync_0($product_id, $current_config)
+> \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig productGetConfigurationAsync_0($product_id, $current_config, $include_wizard_items)
 
-Get the configuration of a given product
 
-This endpoint will return the configuration of the product with the available options and validation messages based on the provided config.  When the config changes you can reflect the changes against this endpoint.  This endpoint will only supply the available options and not all. Some options might only be avaible within a certain height or width.                When all options are valid a price will be given.                Sample of current config:                    POST /product/1/configuration      {         \"consumerPrice\": false,         \"withoutDiscount\": false,         \"options\": [             {                 \"option\": \"Width\",                 \"value\": 1200             }         ]      }
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
-
 $apiInstance = new Swagger\Client\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$product_id = 56; // int | The ID of the product
-$current_config = new \Swagger\Client\Model\ProductConfigRequest(); // \Swagger\Client\Model\ProductConfigRequest | The current configuration
+$product_id = 56; // int | 
+$current_config = new \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest(); // \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest | 
+$include_wizard_items = true; // bool | 
 
 try {
-    $result = $apiInstance->productGetConfigurationAsync_0($product_id, $current_config);
+    $result = $apiInstance->productGetConfigurationAsync_0($product_id, $current_config, $include_wizard_items);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productGetConfigurationAsync_0: ', $e->getMessage(), PHP_EOL;
@@ -277,16 +246,17 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| The ID of the product |
- **current_config** | [**\Swagger\Client\Model\ProductConfigRequest**](../Model/ProductConfigRequest.md)| The current configuration |
+ **product_id** | **int**|  |
+ **current_config** | [**\Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest**](../Model/HamstraAPIModelsProductsProductConfigRequest.md)|  |
+ **include_wizard_items** | **bool**|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\ProductConfig**](../Model/ProductConfig.md)
+[**\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig**](../Model/HamstraAPIModelsProductsProductConfig.md)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -296,7 +266,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetValidationMessagesAsync**
-> \Swagger\Client\Model\ValidationMessageDTO[] productGetValidationMessagesAsync()
+> \Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[] productGetValidationMessagesAsync()
 
 Get the product option validation messages
 
@@ -305,16 +275,10 @@ Get the product option validation messages
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
-
 $apiInstance = new Swagger\Client\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 
 try {
@@ -331,11 +295,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\ValidationMessageDTO[]**](../Model/ValidationMessageDTO.md)
+[**\Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]**](../Model/HamstraAPIDTOValidationMessageDTO.md)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey)
+No authorization required
 
 ### HTTP request headers
 
