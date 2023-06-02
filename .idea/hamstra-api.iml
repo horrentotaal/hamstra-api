@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" packagePrefix="Swagger\Client\" />
       <sourceFolder url="file://$MODULE_DIR$/hamstra-api/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/hamstra-api/test" isTestSource="true" packagePrefix="Swagger\Client\" />
+      <sourceFolder url="file://$MODULE_DIR$/hamstra-api/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/hamstra-api/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/hamstra-api/lib" isTestSource="false" packagePrefix="Swagger\Client\" />
       <sourceFolder url="file://$MODULE_DIR$/lib" isTestSource="false" packagePrefix="Swagger\Client\" />
