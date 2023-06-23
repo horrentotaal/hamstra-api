@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\Hamstra
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Horrentotaal\Hamstra\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Horrentotaal\Hamstra\ApiException;
+use Horrentotaal\Hamstra\Configuration;
+use Horrentotaal\Hamstra\HeaderSelector;
+use Horrentotaal\Hamstra\ObjectSerializer;
 
 /**
  * ProductApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\Hamstra
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -93,9 +93,9 @@ class ProductApi
      * Get the available products for the authenticated user
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProduct[]
+     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProduct[]
      */
     public function productGetAvailableProducts()
     {
@@ -109,13 +109,13 @@ class ProductApi
      * Get the available products for the authenticated user
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProduct[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProduct[], HTTP status code, HTTP response headers (array of strings)
      */
     public function productGetAvailableProductsWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProduct[]';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProduct[]';
         $request = $this->productGetAvailableProductsRequest();
 
         try {
@@ -167,7 +167,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProduct[]',
+                        '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProduct[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -207,7 +207,7 @@ class ProductApi
      */
     public function productGetAvailableProductsAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProduct[]';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProduct[]';
         $request = $this->productGetAvailableProductsRequest();
 
         return $this->client
@@ -316,6 +316,11 @@ class ProductApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -347,9 +352,9 @@ class ProductApi
      * @param  bool $include_wizard_items Include wizard only items in the result (optional)
      * @param  bool $full_detail Include product options in the detail (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail
+     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail
      */
     public function productGetById($product_id, $consumer_price = null, $include_wizard_items = null, $full_detail = null)
     {
@@ -367,13 +372,13 @@ class ProductApi
      * @param  bool $include_wizard_items Include wizard only items in the result (optional)
      * @param  bool $full_detail Include product options in the detail (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail, HTTP status code, HTTP response headers (array of strings)
      */
     public function productGetByIdWithHttpInfo($product_id, $consumer_price = null, $include_wizard_items = null, $full_detail = null)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail';
         $request = $this->productGetByIdRequest($product_id, $consumer_price, $include_wizard_items, $full_detail);
 
         try {
@@ -425,7 +430,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail',
+                        '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -473,7 +478,7 @@ class ProductApi
      */
     public function productGetByIdAsyncWithHttpInfo($product_id, $consumer_price = null, $include_wizard_items = null, $full_detail = null)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail';
         $request = $this->productGetByIdRequest($product_id, $consumer_price, $include_wizard_items, $full_detail);
 
         return $this->client
@@ -612,6 +617,11 @@ class ProductApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -640,9 +650,9 @@ class ProductApi
      *
      * @param  string $sku The product code (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail
+     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail
      */
     public function productGetBySku($sku)
     {
@@ -657,13 +667,13 @@ class ProductApi
      *
      * @param  string $sku The product code (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail, HTTP status code, HTTP response headers (array of strings)
      */
     public function productGetBySkuWithHttpInfo($sku)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail';
         $request = $this->productGetBySkuRequest($sku);
 
         try {
@@ -715,7 +725,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail',
+                        '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -757,7 +767,7 @@ class ProductApi
      */
     public function productGetBySkuAsyncWithHttpInfo($sku)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetail';
         $request = $this->productGetBySkuRequest($sku);
 
         return $this->client
@@ -881,6 +891,11 @@ class ProductApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -911,9 +926,9 @@ class ProductApi
      * @param  bool $current_config_without_discount current_config_without_discount (optional)
      * @param  object[] $current_config_options current_config_options (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig
+     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig
      */
     public function productGetConfigurationAsync($product_id, $include_wizard_items = null, $current_config_consumer_price = null, $current_config_without_discount = null, $current_config_options = null)
     {
@@ -930,13 +945,13 @@ class ProductApi
      * @param  bool $current_config_without_discount (optional)
      * @param  object[] $current_config_options (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig, HTTP status code, HTTP response headers (array of strings)
      */
     public function productGetConfigurationAsyncWithHttpInfo($product_id, $include_wizard_items = null, $current_config_consumer_price = null, $current_config_without_discount = null, $current_config_options = null)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig';
         $request = $this->productGetConfigurationAsyncRequest($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options);
 
         try {
@@ -988,7 +1003,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig',
+                        '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1038,7 +1053,7 @@ class ProductApi
      */
     public function productGetConfigurationAsyncAsyncWithHttpInfo($product_id, $include_wizard_items = null, $current_config_consumer_price = null, $current_config_without_discount = null, $current_config_options = null)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig';
         $request = $this->productGetConfigurationAsyncRequest($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options);
 
         return $this->client
@@ -1185,6 +1200,11 @@ class ProductApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1210,12 +1230,12 @@ class ProductApi
      * Operation productGetConfigurationAsync_0
      *
      * @param  int $product_id product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config current_config (required)
+     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfigRequest $current_config current_config (required)
      * @param  bool $include_wizard_items include_wizard_items (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig
+     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig
      */
     public function productGetConfigurationAsync_0($product_id, $current_config, $include_wizard_items = null)
     {
@@ -1227,16 +1247,16 @@ class ProductApi
      * Operation productGetConfigurationAsync_0WithHttpInfo
      *
      * @param  int $product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
+     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
      * @param  bool $include_wizard_items (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig, HTTP status code, HTTP response headers (array of strings)
      */
     public function productGetConfigurationAsync_0WithHttpInfo($product_id, $current_config, $include_wizard_items = null)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig';
         $request = $this->productGetConfigurationAsync_0Request($product_id, $current_config, $include_wizard_items);
 
         try {
@@ -1288,7 +1308,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig',
+                        '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1304,7 +1324,7 @@ class ProductApi
      * 
      *
      * @param  int $product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
+     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
      * @param  bool $include_wizard_items (optional)
      *
      * @throws \InvalidArgumentException
@@ -1326,7 +1346,7 @@ class ProductApi
      * 
      *
      * @param  int $product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
+     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
      * @param  bool $include_wizard_items (optional)
      *
      * @throws \InvalidArgumentException
@@ -1334,7 +1354,7 @@ class ProductApi
      */
     public function productGetConfigurationAsync_0AsyncWithHttpInfo($product_id, $current_config, $include_wizard_items = null)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfig';
         $request = $this->productGetConfigurationAsync_0Request($product_id, $current_config, $include_wizard_items);
 
         return $this->client
@@ -1378,7 +1398,7 @@ class ProductApi
      * Create request for operation 'productGetConfigurationAsync_0'
      *
      * @param  int $product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
+     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
      * @param  bool $include_wizard_items (optional)
      *
      * @throws \InvalidArgumentException
@@ -1473,6 +1493,11 @@ class ProductApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1500,9 +1525,9 @@ class ProductApi
      * Get the product option validation messages
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]
+     * @return \Horrentotaal\Hamstra\Model\HamstraAPIDTOValidationMessageDTO[]
      */
     public function productGetValidationMessagesAsync()
     {
@@ -1516,13 +1541,13 @@ class ProductApi
      * Get the product option validation messages
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIDTOValidationMessageDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function productGetValidationMessagesAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIDTOValidationMessageDTO[]';
         $request = $this->productGetValidationMessagesAsyncRequest();
 
         try {
@@ -1574,7 +1599,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]',
+                        '\Horrentotaal\Hamstra\Model\HamstraAPIDTOValidationMessageDTO[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1614,7 +1639,7 @@ class ProductApi
      */
     public function productGetValidationMessagesAsyncAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIDTOValidationMessageDTO[]';
         $request = $this->productGetValidationMessagesAsyncRequest();
 
         return $this->client
@@ -1723,6 +1748,11 @@ class ProductApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

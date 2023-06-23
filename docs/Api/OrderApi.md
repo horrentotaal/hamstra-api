@@ -1,4 +1,4 @@
-# Swagger\Client\OrderApi
+# Horrentotaal\Hamstra\OrderApi
 
 All URIs are relative to *https://staging.api.hamstraonline.vmcluster.nl*
 
@@ -24,12 +24,18 @@ Sample order validation errors:                    POST /order      [          {
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\OrderApi(
+// Configure API key authorization: apiKey
+$config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+
+$apiInstance = new Horrentotaal\Hamstra\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$order_request = new \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest(); // \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest | The order to create
+$order_request = new \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest(); // \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest | The order to create
 
 try {
     $result = $apiInstance->orderCreateOrderAsync($order_request);
@@ -44,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_request** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)| The order to create |
+ **order_request** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)| The order to create |
 
 ### Return type
 
@@ -52,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -73,12 +79,18 @@ Sample order validation errors:                    PUT /order/orderQuotation    
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\OrderApi(
+// Configure API key authorization: apiKey
+$config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+
+$apiInstance = new Horrentotaal\Hamstra\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$order_quotation = new \Swagger\Client\Model\HamstraAPIModelsOrdersOrderQuotation(); // \Swagger\Client\Model\HamstraAPIModelsOrdersOrderQuotation | The quotations to order
+$order_quotation = new \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderQuotation(); // \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderQuotation | The quotations to order
 
 try {
     $result = $apiInstance->orderOrderQuotationAsync($order_quotation);
@@ -93,7 +105,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_quotation** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderQuotation**](../Model/HamstraAPIModelsOrdersOrderQuotation.md)| The quotations to order |
+ **order_quotation** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderQuotation**](../Model/HamstraAPIModelsOrdersOrderQuotation.md)| The quotations to order |
 
 ### Return type
 
@@ -101,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -122,12 +134,18 @@ Sample order request:                    PUT /order/saveAsQuotation      {      
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\OrderApi(
+// Configure API key authorization: apiKey
+$config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+
+$apiInstance = new Horrentotaal\Hamstra\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$order_request = new \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest(); // \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest | The order to quote
+$order_request = new \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest(); // \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest | The order to quote
 
 try {
     $result = $apiInstance->orderSaveAsQuotation($order_request);
@@ -142,7 +160,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_request** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)| The order to quote |
+ **order_request** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)| The order to quote |
 
 ### Return type
 
@@ -150,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -171,12 +189,18 @@ Creates or updates the order
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\OrderApi(
+// Configure API key authorization: apiKey
+$config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+
+$apiInstance = new Horrentotaal\Hamstra\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$order_request = new \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest(); // \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest | The order to create/update
+$order_request = new \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest(); // \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest | The order to create/update
 
 try {
     $result = $apiInstance->orderSaveOrderAsync($order_request);
@@ -191,7 +215,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_request** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)| The order to create/update |
+ **order_request** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)| The order to create/update |
 
 ### Return type
 
@@ -199,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -220,12 +244,18 @@ Sample order validation errors:                    PUT /order      [          { 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\OrderApi(
+// Configure API key authorization: apiKey
+$config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+
+$apiInstance = new Horrentotaal\Hamstra\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$order_request = new \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest(); // \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest | The order to update
+$order_request = new \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest(); // \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest | The order to update
 
 try {
     $result = $apiInstance->orderUpdateOrderAsync($order_request);
@@ -240,7 +270,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_request** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)| The order to update |
+ **order_request** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)| The order to update |
 
 ### Return type
 
@@ -248,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -258,7 +288,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **orderValidateAsync**
-> \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest orderValidateAsync($order_request)
+> \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest orderValidateAsync($order_request)
 
 Validate the order
 
@@ -269,12 +299,18 @@ Sample order validation errors:                    POST /order/validate      [  
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\OrderApi(
+// Configure API key authorization: apiKey
+$config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+
+$apiInstance = new Horrentotaal\Hamstra\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$order_request = new \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest(); // \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest | 
+$order_request = new \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest(); // \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest | 
 
 try {
     $result = $apiInstance->orderValidateAsync($order_request);
@@ -289,15 +325,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_request** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)|  |
+ **order_request** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)
+[**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest**](../Model/HamstraAPIModelsOrdersOrderRequest.md)
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 

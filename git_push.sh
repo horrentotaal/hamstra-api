@@ -9,7 +9,7 @@ release_note=$3
 git_repo_base_url=$4
 
 if [ "$git_user_id" = "" ]; then
-    git_user_id=""
+    git_user_id="horrentotaal"
     echo "[INFO] No command line input provided. Set \$git_user_id to $git_user_id"
 fi
 

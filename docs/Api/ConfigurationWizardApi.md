@@ -1,4 +1,4 @@
-# Swagger\Client\ConfigurationWizardApi
+# Horrentotaal\Hamstra\ConfigurationWizardApi
 
 All URIs are relative to *https://staging.api.hamstraonline.vmcluster.nl*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **configurationWizardGet**
-> \Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[] configurationWizardGet($language)
+> \Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[] configurationWizardGet($language)
 
 Get embedurl for customer based on APIkey authentication
 
@@ -17,10 +17,16 @@ Get embedurl for customer based on APIkey authentication
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ConfigurationWizardApi(
+// Configure API key authorization: apiKey
+$config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Horrentotaal\Hamstra\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+
+$apiInstance = new Horrentotaal\Hamstra\Api\ConfigurationWizardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $language = "language_example"; // string | ISO 639-1 code for language. Currently supported: nl and fr
 
@@ -41,11 +47,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]**](../Model/HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl.md)
+[**\Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]**](../Model/HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl.md)
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 

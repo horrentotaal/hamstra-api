@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\Hamstra
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Horrentotaal\Hamstra\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Horrentotaal\Hamstra\ApiException;
+use Horrentotaal\Hamstra\Configuration;
+use Horrentotaal\Hamstra\HeaderSelector;
+use Horrentotaal\Hamstra\ObjectSerializer;
 
 /**
  * QuotationApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\Hamstra
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -94,7 +94,7 @@ class QuotationApi
      *
      * @param  int $id The quotation Id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -110,7 +110,7 @@ class QuotationApi
      *
      * @param  int $id The quotation Id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -298,6 +298,11 @@ class QuotationApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -326,9 +331,9 @@ class QuotationApi
      *
      * @param  int $id The quotation id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotationLine[]
+     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsQuotationsViewQuotationLine[]
      */
     public function quotationGetQuotationLines($id)
     {
@@ -343,13 +348,13 @@ class QuotationApi
      *
      * @param  int $id The quotation id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotationLine[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIModelsQuotationsViewQuotationLine[], HTTP status code, HTTP response headers (array of strings)
      */
     public function quotationGetQuotationLinesWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotationLine[]';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsQuotationsViewQuotationLine[]';
         $request = $this->quotationGetQuotationLinesRequest($id);
 
         try {
@@ -401,7 +406,7 @@ class QuotationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotationLine[]',
+                        '\Horrentotaal\Hamstra\Model\HamstraAPIModelsQuotationsViewQuotationLine[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -443,7 +448,7 @@ class QuotationApi
      */
     public function quotationGetQuotationLinesAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotationLine[]';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsQuotationsViewQuotationLine[]';
         $request = $this->quotationGetQuotationLinesRequest($id);
 
         return $this->client
@@ -567,6 +572,11 @@ class QuotationApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -598,9 +608,9 @@ class QuotationApi
      * @param  string $sort_by The field to sort on, default &#39;quotationId&#39; (optional)
      * @param  bool $ascending The sorting direction, default &#39;true&#39; (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation
+     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation
      */
     public function quotationGetQuotations($page_size = null, $page = null, $sort_by = null, $ascending = null)
     {
@@ -618,13 +628,13 @@ class QuotationApi
      * @param  string $sort_by The field to sort on, default &#39;quotationId&#39; (optional)
      * @param  bool $ascending The sorting direction, default &#39;true&#39; (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation, HTTP status code, HTTP response headers (array of strings)
      */
     public function quotationGetQuotationsWithHttpInfo($page_size = null, $page = null, $sort_by = null, $ascending = null)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation';
         $request = $this->quotationGetQuotationsRequest($page_size, $page, $sort_by, $ascending);
 
         try {
@@ -676,7 +686,7 @@ class QuotationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation',
+                        '\Horrentotaal\Hamstra\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -724,7 +734,7 @@ class QuotationApi
      */
     public function quotationGetQuotationsAsyncWithHttpInfo($page_size = null, $page = null, $sort_by = null, $ascending = null)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation';
+        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation';
         $request = $this->quotationGetQuotationsRequest($page_size, $page, $sort_by, $ascending);
 
         return $this->client
@@ -853,6 +863,11 @@ class QuotationApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
