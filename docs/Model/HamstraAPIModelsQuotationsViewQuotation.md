@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **delivery_city** | **string** |  | [optional] 
 **delivery_country** | **string** |  | [optional] 
 **status** | **int** |  | [optional] 
-**quotation_lines** | [**\Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotationLine[]**](HamstraAPIModelsQuotationsViewQuotationLine.md) |  | [optional] 
+**quotation_lines** | [**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsQuotationsViewQuotationLine[]**](HamstraAPIModelsQuotationsViewQuotationLine.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

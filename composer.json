@@ -1,6 +1,7 @@
 {
     "name": "horrentotaal/hamstra-api",
-    "description": "Hamstra API voor inkopen",
+    "version": "4.2.1",
+    "description": "",
     "keywords": [
         "swagger",
         "php",
@@ -28,15 +29,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": {
-            "Swagger\\Client\\" : "lib/",
-            "Swagger\\Client\\Api\\": "lib/Api"
-        }
+        "psr-4": { "Horrentotaal\\HamstraApi\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": {
-            "Swagger\\Client\\" : "lib/",
-            "Swagger\\Client\\Api\\": "lib/Api"
-        }
+        "psr-4": { "Horrentotaal\\HamstraApi\\" : "test/" }
     }
 }

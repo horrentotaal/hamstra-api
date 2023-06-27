@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Horrentotaal\HamstraApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Horrentotaal\HamstraApi\ObjectSerializer;
 
 /**
  * HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation implements
         'total_page_count' => 'int',
         'total_item_count' => 'int',
         'page_size' => 'int',
-        'items' => '\Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotation[]'
+        'items' => '\Horrentotaal\HamstraApi\Model\HamstraAPIModelsQuotationsViewQuotation[]'
     ];
 
     /**
@@ -327,7 +327,7 @@ class HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation implements
     /**
      * Gets items
      *
-     * @return \Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotation[]
+     * @return \Horrentotaal\HamstraApi\Model\HamstraAPIModelsQuotationsViewQuotation[]
      */
     public function getItems()
     {
@@ -337,7 +337,7 @@ class HamstraAPIModelsGridListHamstraAPIModelsQuotationsViewQuotation implements
     /**
      * Sets items
      *
-     * @param \Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotation[] $items items
+     * @param \Horrentotaal\HamstraApi\Model\HamstraAPIModelsQuotationsViewQuotation[] $items items
      *
      * @return $this
      */

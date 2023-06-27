@@ -1,4 +1,4 @@
-# Swagger\Client\ProductApi
+# Horrentotaal\HamstraApi\ProductApi
 
 All URIs are relative to *https://staging.api.hamstraonline.vmcluster.nl*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **productGetAvailableProducts**
-> \Swagger\Client\Model\HamstraAPIModelsProductsProduct[] productGetAvailableProducts()
+> \Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProduct[] productGetAvailableProducts()
 
 Get the available products for the authenticated user
 
@@ -23,11 +23,11 @@ Get the available products for the authenticated user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+$config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+// $config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\ProductApi(
+$apiInstance = new Horrentotaal\HamstraApi\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\HamstraAPIModelsProductsProduct[]**](../Model/HamstraAPIModelsProductsProduct.md)
+[**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProduct[]**](../Model/HamstraAPIModelsProductsProduct.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetById**
-> \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail productGetById($product_id, $consumer_price, $include_wizard_items, $full_detail)
+> \Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductDetail productGetById($product_id, $consumer_price, $include_wizard_items, $full_detail)
 
 Get the details of a given product
 
@@ -74,11 +74,11 @@ When 'fullDetail' is true the product options will be included.  The product opt
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+$config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+// $config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\ProductApi(
+$apiInstance = new Horrentotaal\HamstraApi\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail**](../Model/HamstraAPIModelsProductsProductDetail.md)
+[**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductDetail**](../Model/HamstraAPIModelsProductsProductDetail.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetBySku**
-> \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail productGetBySku($sku)
+> \Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductDetail productGetBySku($sku)
 
 Get the product by product code
 
@@ -135,11 +135,11 @@ This product detail does not contain the option list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+$config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+// $config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\ProductApi(
+$apiInstance = new Horrentotaal\HamstraApi\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail**](../Model/HamstraAPIModelsProductsProductDetail.md)
+[**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductDetail**](../Model/HamstraAPIModelsProductsProductDetail.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetConfigurationAsync**
-> \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig productGetConfigurationAsync($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options)
+> \Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductConfig productGetConfigurationAsync($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options)
 
 
 
@@ -188,11 +188,11 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+$config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+// $config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\ProductApi(
+$apiInstance = new Horrentotaal\HamstraApi\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig**](../Model/HamstraAPIModelsProductsProductConfig.md)
+[**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductConfig**](../Model/HamstraAPIModelsProductsProductConfig.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetConfigurationAsync_0**
-> \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig productGetConfigurationAsync_0($product_id, $current_config, $include_wizard_items)
+> \Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductConfig productGetConfigurationAsync_0($product_id, $current_config, $include_wizard_items)
 
 
 
@@ -249,18 +249,18 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+$config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+// $config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\ProductApi(
+$apiInstance = new Horrentotaal\HamstraApi\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $product_id = 56; // int | 
-$current_config = new \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest(); // \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest | 
+$current_config = new \Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductConfigRequest(); // \Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductConfigRequest | 
 $include_wizard_items = true; // bool | 
 
 try {
@@ -277,12 +277,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**|  |
- **current_config** | [**\Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest**](../Model/HamstraAPIModelsProductsProductConfigRequest.md)|  |
+ **current_config** | [**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductConfigRequest**](../Model/HamstraAPIModelsProductsProductConfigRequest.md)|  |
  **include_wizard_items** | **bool**|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig**](../Model/HamstraAPIModelsProductsProductConfig.md)
+[**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductConfig**](../Model/HamstraAPIModelsProductsProductConfig.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetValidationMessagesAsync**
-> \Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[] productGetValidationMessagesAsync()
+> \Horrentotaal\HamstraApi\Model\HamstraAPIDTOValidationMessageDTO[] productGetValidationMessagesAsync()
 
 Get the product option validation messages
 
@@ -306,11 +306,11 @@ Get the product option validation messages
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+$config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+// $config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\ProductApi(
+$apiInstance = new Horrentotaal\HamstraApi\Api\ProductApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -331,7 +331,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]**](../Model/HamstraAPIDTOValidationMessageDTO.md)
+[**\Horrentotaal\HamstraApi\Model\HamstraAPIDTOValidationMessageDTO[]**](../Model/HamstraAPIDTOValidationMessageDTO.md)
 
 ### Authorization
 

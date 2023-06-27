@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Horrentotaal\HamstraApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Horrentotaal\HamstraApi\ObjectSerializer;
 
 /**
  * HamstraAPIModelsProductsProductDetailOption Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -69,7 +69,7 @@ class HamstraAPIModelsProductsProductDetailOption implements ModelInterface, Arr
         'product_option_group_id' => 'int',
         'measurement_instructions' => 'string',
         'measurement_image_reference' => 'string',
-        'values' => '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetailOptionValue[]'
+        'values' => '\Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductDetailOptionValue[]'
     ];
 
     /**
@@ -567,7 +567,7 @@ class HamstraAPIModelsProductsProductDetailOption implements ModelInterface, Arr
     /**
      * Gets values
      *
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductDetailOptionValue[]
+     * @return \Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductDetailOptionValue[]
      */
     public function getValues()
     {
@@ -577,7 +577,7 @@ class HamstraAPIModelsProductsProductDetailOption implements ModelInterface, Arr
     /**
      * Sets values
      *
-     * @param \Swagger\Client\Model\HamstraAPIModelsProductsProductDetailOptionValue[] $values values
+     * @param \Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsProductDetailOptionValue[] $values values
      *
      * @return $this
      */

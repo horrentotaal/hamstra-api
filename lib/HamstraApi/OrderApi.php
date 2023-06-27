@@ -1,10 +1,10 @@
 <?php
 /**
- * ProductApi
+ * OrderApi
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Horrentotaal\HamstraApi\HamstraApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,20 +34,20 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Horrentotaal\HamstraApi\ApiException;
+use Horrentotaal\HamstraApi\Configuration;
+use Horrentotaal\HamstraApi\HeaderSelector;
+use Horrentotaal\HamstraApi\ObjectSerializer;
 
 /**
- * ProductApi Class Doc Comment
+ * OrderApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ProductApi
+class OrderApi
 {
     /**
      * @var ClientInterface
@@ -88,35 +88,37 @@ class ProductApi
     }
 
     /**
-     * Operation productGetAvailableProducts
+     * Operation orderCreateOrderAsync
      *
-     * Get the available products for the authenticated user
+     * Creates the order
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProduct[]
+     * @return int
      */
-    public function productGetAvailableProducts()
+    public function orderCreateOrderAsync($order_request)
     {
-        list($response) = $this->productGetAvailableProductsWithHttpInfo();
+        list($response) = $this->orderCreateOrderAsyncWithHttpInfo($order_request);
         return $response;
     }
 
     /**
-     * Operation productGetAvailableProductsWithHttpInfo
+     * Operation orderCreateOrderAsyncWithHttpInfo
      *
-     * Get the available products for the authenticated user
+     * Creates the order
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProduct[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productGetAvailableProductsWithHttpInfo()
+    public function orderCreateOrderAsyncWithHttpInfo($order_request)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProduct[]';
-        $request = $this->productGetAvailableProductsRequest();
+        $returnType = 'int';
+        $request = $this->orderCreateOrderAsyncRequest($order_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -164,10 +166,18 @@ class ProductApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
+                case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProduct[]',
+                        'int',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Horrentotaal\HamstraApi\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -178,17 +188,18 @@ class ProductApi
     }
 
     /**
-     * Operation productGetAvailableProductsAsync
+     * Operation orderCreateOrderAsyncAsync
      *
-     * Get the available products for the authenticated user
+     * Creates the order
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGetAvailableProductsAsync()
+    public function orderCreateOrderAsyncAsync($order_request)
     {
-        return $this->productGetAvailableProductsAsyncWithHttpInfo()
+        return $this->orderCreateOrderAsyncAsyncWithHttpInfo($order_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -197,18 +208,19 @@ class ProductApi
     }
 
     /**
-     * Operation productGetAvailableProductsAsyncWithHttpInfo
+     * Operation orderCreateOrderAsyncAsyncWithHttpInfo
      *
-     * Get the available products for the authenticated user
+     * Creates the order
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGetAvailableProductsAsyncWithHttpInfo()
+    public function orderCreateOrderAsyncAsyncWithHttpInfo($order_request)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProduct[]';
-        $request = $this->productGetAvailableProductsRequest();
+        $returnType = 'int';
+        $request = $this->orderCreateOrderAsyncRequest($order_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -248,16 +260,23 @@ class ProductApi
     }
 
     /**
-     * Create request for operation 'productGetAvailableProducts'
+     * Create request for operation 'orderCreateOrderAsync'
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productGetAvailableProductsRequest()
+    protected function orderCreateOrderAsyncRequest($order_request)
     {
+        // verify the required parameter 'order_request' is set
+        if ($order_request === null || (is_array($order_request) && count($order_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_request when calling orderCreateOrderAsync'
+            );
+        }
 
-        $resourcePath = '/api/product';
+        $resourcePath = '/api/order';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -268,1182 +287,8 @@ class ProductApi
 
         // body params
         $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'text/json', 'application/xml', 'text/xml']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
-                // \stdClass has no __toString(), so we should encode it manually
-                if ($httpBody instanceof \stdClass) {
-                    $httpBody = \GuzzleHttp\json_encode($httpBody);
-                }
-                // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
-        if ($apiKey !== null) {
-            $headers['apiKey'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation productGetById
-     *
-     * Get the details of a given product
-     *
-     * @param  int $product_id The ID of the product (required)
-     * @param  bool $consumer_price Show the consumer price instead of salesprice (optional)
-     * @param  bool $include_wizard_items Include wizard only items in the result (optional)
-     * @param  bool $full_detail Include product options in the detail (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail
-     */
-    public function productGetById($product_id, $consumer_price = null, $include_wizard_items = null, $full_detail = null)
-    {
-        list($response) = $this->productGetByIdWithHttpInfo($product_id, $consumer_price, $include_wizard_items, $full_detail);
-        return $response;
-    }
-
-    /**
-     * Operation productGetByIdWithHttpInfo
-     *
-     * Get the details of a given product
-     *
-     * @param  int $product_id The ID of the product (required)
-     * @param  bool $consumer_price Show the consumer price instead of salesprice (optional)
-     * @param  bool $include_wizard_items Include wizard only items in the result (optional)
-     * @param  bool $full_detail Include product options in the detail (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function productGetByIdWithHttpInfo($product_id, $consumer_price = null, $include_wizard_items = null, $full_detail = null)
-    {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail';
-        $request = $this->productGetByIdRequest($product_id, $consumer_price, $include_wizard_items, $full_detail);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation productGetByIdAsync
-     *
-     * Get the details of a given product
-     *
-     * @param  int $product_id The ID of the product (required)
-     * @param  bool $consumer_price Show the consumer price instead of salesprice (optional)
-     * @param  bool $include_wizard_items Include wizard only items in the result (optional)
-     * @param  bool $full_detail Include product options in the detail (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function productGetByIdAsync($product_id, $consumer_price = null, $include_wizard_items = null, $full_detail = null)
-    {
-        return $this->productGetByIdAsyncWithHttpInfo($product_id, $consumer_price, $include_wizard_items, $full_detail)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation productGetByIdAsyncWithHttpInfo
-     *
-     * Get the details of a given product
-     *
-     * @param  int $product_id The ID of the product (required)
-     * @param  bool $consumer_price Show the consumer price instead of salesprice (optional)
-     * @param  bool $include_wizard_items Include wizard only items in the result (optional)
-     * @param  bool $full_detail Include product options in the detail (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function productGetByIdAsyncWithHttpInfo($product_id, $consumer_price = null, $include_wizard_items = null, $full_detail = null)
-    {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail';
-        $request = $this->productGetByIdRequest($product_id, $consumer_price, $include_wizard_items, $full_detail);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'productGetById'
-     *
-     * @param  int $product_id The ID of the product (required)
-     * @param  bool $consumer_price Show the consumer price instead of salesprice (optional)
-     * @param  bool $include_wizard_items Include wizard only items in the result (optional)
-     * @param  bool $full_detail Include product options in the detail (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function productGetByIdRequest($product_id, $consumer_price = null, $include_wizard_items = null, $full_detail = null)
-    {
-        // verify the required parameter 'product_id' is set
-        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $product_id when calling productGetById'
-            );
-        }
-
-        $resourcePath = '/api/product/{productId}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($consumer_price !== null) {
-            $queryParams['consumerPrice'] = ObjectSerializer::toQueryValue($consumer_price);
-        }
-        // query params
-        if ($include_wizard_items !== null) {
-            $queryParams['includeWizardItems'] = ObjectSerializer::toQueryValue($include_wizard_items);
-        }
-        // query params
-        if ($full_detail !== null) {
-            $queryParams['fullDetail'] = ObjectSerializer::toQueryValue($full_detail);
-        }
-
-        // path params
-        if ($product_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($product_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'text/json', 'application/xml', 'text/xml']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
-                // \stdClass has no __toString(), so we should encode it manually
-                if ($httpBody instanceof \stdClass) {
-                    $httpBody = \GuzzleHttp\json_encode($httpBody);
-                }
-                // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
-        if ($apiKey !== null) {
-            $headers['apiKey'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation productGetBySku
-     *
-     * Get the product by product code
-     *
-     * @param  string $sku The product code (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail
-     */
-    public function productGetBySku($sku)
-    {
-        list($response) = $this->productGetBySkuWithHttpInfo($sku);
-        return $response;
-    }
-
-    /**
-     * Operation productGetBySkuWithHttpInfo
-     *
-     * Get the product by product code
-     *
-     * @param  string $sku The product code (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProductDetail, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function productGetBySkuWithHttpInfo($sku)
-    {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail';
-        $request = $this->productGetBySkuRequest($sku);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation productGetBySkuAsync
-     *
-     * Get the product by product code
-     *
-     * @param  string $sku The product code (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function productGetBySkuAsync($sku)
-    {
-        return $this->productGetBySkuAsyncWithHttpInfo($sku)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation productGetBySkuAsyncWithHttpInfo
-     *
-     * Get the product by product code
-     *
-     * @param  string $sku The product code (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function productGetBySkuAsyncWithHttpInfo($sku)
-    {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetail';
-        $request = $this->productGetBySkuRequest($sku);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'productGetBySku'
-     *
-     * @param  string $sku The product code (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function productGetBySkuRequest($sku)
-    {
-        // verify the required parameter 'sku' is set
-        if ($sku === null || (is_array($sku) && count($sku) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $sku when calling productGetBySku'
-            );
-        }
-
-        $resourcePath = '/api/product/sku/{sku}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($sku !== null) {
-            $resourcePath = str_replace(
-                '{' . 'sku' . '}',
-                ObjectSerializer::toPathValue($sku),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'text/json', 'application/xml', 'text/xml']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
-                // \stdClass has no __toString(), so we should encode it manually
-                if ($httpBody instanceof \stdClass) {
-                    $httpBody = \GuzzleHttp\json_encode($httpBody);
-                }
-                // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
-        if ($apiKey !== null) {
-            $headers['apiKey'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation productGetConfigurationAsync
-     *
-     * @param  int $product_id product_id (required)
-     * @param  bool $include_wizard_items include_wizard_items (optional)
-     * @param  bool $current_config_consumer_price current_config_consumer_price (optional)
-     * @param  bool $current_config_without_discount current_config_without_discount (optional)
-     * @param  object[] $current_config_options current_config_options (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig
-     */
-    public function productGetConfigurationAsync($product_id, $include_wizard_items = null, $current_config_consumer_price = null, $current_config_without_discount = null, $current_config_options = null)
-    {
-        list($response) = $this->productGetConfigurationAsyncWithHttpInfo($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options);
-        return $response;
-    }
-
-    /**
-     * Operation productGetConfigurationAsyncWithHttpInfo
-     *
-     * @param  int $product_id (required)
-     * @param  bool $include_wizard_items (optional)
-     * @param  bool $current_config_consumer_price (optional)
-     * @param  bool $current_config_without_discount (optional)
-     * @param  object[] $current_config_options (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function productGetConfigurationAsyncWithHttpInfo($product_id, $include_wizard_items = null, $current_config_consumer_price = null, $current_config_without_discount = null, $current_config_options = null)
-    {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig';
-        $request = $this->productGetConfigurationAsyncRequest($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation productGetConfigurationAsyncAsync
-     *
-     * 
-     *
-     * @param  int $product_id (required)
-     * @param  bool $include_wizard_items (optional)
-     * @param  bool $current_config_consumer_price (optional)
-     * @param  bool $current_config_without_discount (optional)
-     * @param  object[] $current_config_options (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function productGetConfigurationAsyncAsync($product_id, $include_wizard_items = null, $current_config_consumer_price = null, $current_config_without_discount = null, $current_config_options = null)
-    {
-        return $this->productGetConfigurationAsyncAsyncWithHttpInfo($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation productGetConfigurationAsyncAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  int $product_id (required)
-     * @param  bool $include_wizard_items (optional)
-     * @param  bool $current_config_consumer_price (optional)
-     * @param  bool $current_config_without_discount (optional)
-     * @param  object[] $current_config_options (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function productGetConfigurationAsyncAsyncWithHttpInfo($product_id, $include_wizard_items = null, $current_config_consumer_price = null, $current_config_without_discount = null, $current_config_options = null)
-    {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig';
-        $request = $this->productGetConfigurationAsyncRequest($product_id, $include_wizard_items, $current_config_consumer_price, $current_config_without_discount, $current_config_options);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'productGetConfigurationAsync'
-     *
-     * @param  int $product_id (required)
-     * @param  bool $include_wizard_items (optional)
-     * @param  bool $current_config_consumer_price (optional)
-     * @param  bool $current_config_without_discount (optional)
-     * @param  object[] $current_config_options (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function productGetConfigurationAsyncRequest($product_id, $include_wizard_items = null, $current_config_consumer_price = null, $current_config_without_discount = null, $current_config_options = null)
-    {
-        // verify the required parameter 'product_id' is set
-        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $product_id when calling productGetConfigurationAsync'
-            );
-        }
-
-        $resourcePath = '/api/product/{productId}/configuration';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($include_wizard_items !== null) {
-            $queryParams['includeWizardItems'] = ObjectSerializer::toQueryValue($include_wizard_items);
-        }
-        // query params
-        if ($current_config_consumer_price !== null) {
-            $queryParams['currentConfig.consumerPrice'] = ObjectSerializer::toQueryValue($current_config_consumer_price);
-        }
-        // query params
-        if ($current_config_without_discount !== null) {
-            $queryParams['currentConfig.withoutDiscount'] = ObjectSerializer::toQueryValue($current_config_without_discount);
-        }
-        // query params
-        if (is_array($current_config_options)) {
-            $queryParams['currentConfig.options'] = $current_config_options;
-        } else
-        if ($current_config_options !== null) {
-            $queryParams['currentConfig.options'] = ObjectSerializer::toQueryValue($current_config_options);
-        }
-
-        // path params
-        if ($product_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($product_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'text/json', 'application/xml', 'text/xml']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
-                // \stdClass has no __toString(), so we should encode it manually
-                if ($httpBody instanceof \stdClass) {
-                    $httpBody = \GuzzleHttp\json_encode($httpBody);
-                }
-                // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
-        if ($apiKey !== null) {
-            $headers['apiKey'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation productGetConfigurationAsync_0
-     *
-     * @param  int $product_id product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config current_config (required)
-     * @param  bool $include_wizard_items include_wizard_items (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig
-     */
-    public function productGetConfigurationAsync_0($product_id, $current_config, $include_wizard_items = null)
-    {
-        list($response) = $this->productGetConfigurationAsync_0WithHttpInfo($product_id, $current_config, $include_wizard_items);
-        return $response;
-    }
-
-    /**
-     * Operation productGetConfigurationAsync_0WithHttpInfo
-     *
-     * @param  int $product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
-     * @param  bool $include_wizard_items (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIModelsProductsProductConfig, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function productGetConfigurationAsync_0WithHttpInfo($product_id, $current_config, $include_wizard_items = null)
-    {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig';
-        $request = $this->productGetConfigurationAsync_0Request($product_id, $current_config, $include_wizard_items);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation productGetConfigurationAsync_0Async
-     *
-     * 
-     *
-     * @param  int $product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
-     * @param  bool $include_wizard_items (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function productGetConfigurationAsync_0Async($product_id, $current_config, $include_wizard_items = null)
-    {
-        return $this->productGetConfigurationAsync_0AsyncWithHttpInfo($product_id, $current_config, $include_wizard_items)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation productGetConfigurationAsync_0AsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  int $product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
-     * @param  bool $include_wizard_items (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function productGetConfigurationAsync_0AsyncWithHttpInfo($product_id, $current_config, $include_wizard_items = null)
-    {
-        $returnType = '\Swagger\Client\Model\HamstraAPIModelsProductsProductConfig';
-        $request = $this->productGetConfigurationAsync_0Request($product_id, $current_config, $include_wizard_items);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'productGetConfigurationAsync_0'
-     *
-     * @param  int $product_id (required)
-     * @param  \Swagger\Client\Model\HamstraAPIModelsProductsProductConfigRequest $current_config (required)
-     * @param  bool $include_wizard_items (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function productGetConfigurationAsync_0Request($product_id, $current_config, $include_wizard_items = null)
-    {
-        // verify the required parameter 'product_id' is set
-        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $product_id when calling productGetConfigurationAsync_0'
-            );
-        }
-        // verify the required parameter 'current_config' is set
-        if ($current_config === null || (is_array($current_config) && count($current_config) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $current_config when calling productGetConfigurationAsync_0'
-            );
-        }
-
-        $resourcePath = '/api/product/{productId}/configuration';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($include_wizard_items !== null) {
-            $queryParams['includeWizardItems'] = ObjectSerializer::toQueryValue($include_wizard_items);
-        }
-
-        // path params
-        if ($product_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($product_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($current_config)) {
-            $_tempBody = $current_config;
+        if (isset($order_request)) {
+            $_tempBody = $order_request;
         }
 
         if ($multipart) {
@@ -1520,35 +365,37 @@ class ProductApi
     }
 
     /**
-     * Operation productGetValidationMessagesAsync
+     * Operation orderOrderQuotationAsync
      *
-     * Get the product option validation messages
+     * Creates an order for the given quotation
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]
+     * @return int
      */
-    public function productGetValidationMessagesAsync()
+    public function orderOrderQuotationAsync($order_quotation)
     {
-        list($response) = $this->productGetValidationMessagesAsyncWithHttpInfo();
+        list($response) = $this->orderOrderQuotationAsyncWithHttpInfo($order_quotation);
         return $response;
     }
 
     /**
-     * Operation productGetValidationMessagesAsyncWithHttpInfo
+     * Operation orderOrderQuotationAsyncWithHttpInfo
      *
-     * Get the product option validation messages
+     * Creates an order for the given quotation
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productGetValidationMessagesAsyncWithHttpInfo()
+    public function orderOrderQuotationAsyncWithHttpInfo($order_quotation)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]';
-        $request = $this->productGetValidationMessagesAsyncRequest();
+        $returnType = 'int';
+        $request = $this->orderOrderQuotationAsyncRequest($order_quotation);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1599,7 +446,15 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]',
+                        'int',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1610,17 +465,18 @@ class ProductApi
     }
 
     /**
-     * Operation productGetValidationMessagesAsyncAsync
+     * Operation orderOrderQuotationAsyncAsync
      *
-     * Get the product option validation messages
+     * Creates an order for the given quotation
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGetValidationMessagesAsyncAsync()
+    public function orderOrderQuotationAsyncAsync($order_quotation)
     {
-        return $this->productGetValidationMessagesAsyncAsyncWithHttpInfo()
+        return $this->orderOrderQuotationAsyncAsyncWithHttpInfo($order_quotation)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1629,18 +485,19 @@ class ProductApi
     }
 
     /**
-     * Operation productGetValidationMessagesAsyncAsyncWithHttpInfo
+     * Operation orderOrderQuotationAsyncAsyncWithHttpInfo
      *
-     * Get the product option validation messages
+     * Creates an order for the given quotation
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGetValidationMessagesAsyncAsyncWithHttpInfo()
+    public function orderOrderQuotationAsyncAsyncWithHttpInfo($order_quotation)
     {
-        $returnType = '\Swagger\Client\Model\HamstraAPIDTOValidationMessageDTO[]';
-        $request = $this->productGetValidationMessagesAsyncRequest();
+        $returnType = 'int';
+        $request = $this->orderOrderQuotationAsyncRequest($order_quotation);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1680,16 +537,23 @@ class ProductApi
     }
 
     /**
-     * Create request for operation 'productGetValidationMessagesAsync'
+     * Create request for operation 'orderOrderQuotationAsync'
      *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productGetValidationMessagesAsyncRequest()
+    protected function orderOrderQuotationAsyncRequest($order_quotation)
     {
+        // verify the required parameter 'order_quotation' is set
+        if ($order_quotation === null || (is_array($order_quotation) && count($order_quotation) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_quotation when calling orderOrderQuotationAsync'
+            );
+        }
 
-        $resourcePath = '/api/product/validationMessages';
+        $resourcePath = '/api/order/orderQuotation';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1700,6 +564,9 @@ class ProductApi
 
         // body params
         $_tempBody = null;
+        if (isset($order_quotation)) {
+            $_tempBody = $order_quotation;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1708,7 +575,7 @@ class ProductApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                []
+                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
             );
         }
 
@@ -1767,7 +634,1115 @@ class ProductApi
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
-            'GET',
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation orderSaveAsQuotation
+     *
+     * Creates a quotation for the given order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     *
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return int
+     */
+    public function orderSaveAsQuotation($order_request)
+    {
+        list($response) = $this->orderSaveAsQuotationWithHttpInfo($order_request);
+        return $response;
+    }
+
+    /**
+     * Operation orderSaveAsQuotationWithHttpInfo
+     *
+     * Creates a quotation for the given order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     *
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of int, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderSaveAsQuotationWithHttpInfo($order_request)
+    {
+        $returnType = 'int';
+        $request = $this->orderSaveAsQuotationRequest($order_request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'int',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderSaveAsQuotationAsync
+     *
+     * Creates a quotation for the given order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderSaveAsQuotationAsync($order_request)
+    {
+        return $this->orderSaveAsQuotationAsyncWithHttpInfo($order_request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation orderSaveAsQuotationAsyncWithHttpInfo
+     *
+     * Creates a quotation for the given order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderSaveAsQuotationAsyncWithHttpInfo($order_request)
+    {
+        $returnType = 'int';
+        $request = $this->orderSaveAsQuotationRequest($order_request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'orderSaveAsQuotation'
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function orderSaveAsQuotationRequest($order_request)
+    {
+        // verify the required parameter 'order_request' is set
+        if ($order_request === null || (is_array($order_request) && count($order_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_request when calling orderSaveAsQuotation'
+            );
+        }
+
+        $resourcePath = '/api/order/saveAsQuotation';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($order_request)) {
+            $_tempBody = $order_request;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'text/json', 'application/xml', 'text/xml']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'text/json', 'application/xml', 'text/xml'],
+                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation orderSaveOrderAsync
+     *
+     * Creates or updates the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     *
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return int
+     */
+    public function orderSaveOrderAsync($order_request)
+    {
+        list($response) = $this->orderSaveOrderAsyncWithHttpInfo($order_request);
+        return $response;
+    }
+
+    /**
+     * Operation orderSaveOrderAsyncWithHttpInfo
+     *
+     * Creates or updates the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     *
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of int, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderSaveOrderAsyncWithHttpInfo($order_request)
+    {
+        $returnType = 'int';
+        $request = $this->orderSaveOrderAsyncRequest($order_request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'int',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Horrentotaal\HamstraApi\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderSaveOrderAsyncAsync
+     *
+     * Creates or updates the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderSaveOrderAsyncAsync($order_request)
+    {
+        return $this->orderSaveOrderAsyncAsyncWithHttpInfo($order_request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation orderSaveOrderAsyncAsyncWithHttpInfo
+     *
+     * Creates or updates the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderSaveOrderAsyncAsyncWithHttpInfo($order_request)
+    {
+        $returnType = 'int';
+        $request = $this->orderSaveOrderAsyncRequest($order_request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'orderSaveOrderAsync'
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function orderSaveOrderAsyncRequest($order_request)
+    {
+        // verify the required parameter 'order_request' is set
+        if ($order_request === null || (is_array($order_request) && count($order_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_request when calling orderSaveOrderAsync'
+            );
+        }
+
+        $resourcePath = '/api/order/saveOrder';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($order_request)) {
+            $_tempBody = $order_request;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'text/json', 'application/xml', 'text/xml']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'text/json', 'application/xml', 'text/xml'],
+                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation orderUpdateOrderAsync
+     *
+     * Updates the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     *
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return int
+     */
+    public function orderUpdateOrderAsync($order_request)
+    {
+        list($response) = $this->orderUpdateOrderAsyncWithHttpInfo($order_request);
+        return $response;
+    }
+
+    /**
+     * Operation orderUpdateOrderAsyncWithHttpInfo
+     *
+     * Updates the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     *
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of int, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderUpdateOrderAsyncWithHttpInfo($order_request)
+    {
+        $returnType = 'int';
+        $request = $this->orderUpdateOrderAsyncRequest($order_request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'int',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Horrentotaal\HamstraApi\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderUpdateOrderAsyncAsync
+     *
+     * Updates the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderUpdateOrderAsyncAsync($order_request)
+    {
+        return $this->orderUpdateOrderAsyncAsyncWithHttpInfo($order_request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation orderUpdateOrderAsyncAsyncWithHttpInfo
+     *
+     * Updates the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderUpdateOrderAsyncAsyncWithHttpInfo($order_request)
+    {
+        $returnType = 'int';
+        $request = $this->orderUpdateOrderAsyncRequest($order_request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'orderUpdateOrderAsync'
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function orderUpdateOrderAsyncRequest($order_request)
+    {
+        // verify the required parameter 'order_request' is set
+        if ($order_request === null || (is_array($order_request) && count($order_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_request when calling orderUpdateOrderAsync'
+            );
+        }
+
+        $resourcePath = '/api/order';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($order_request)) {
+            $_tempBody = $order_request;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'text/json', 'application/xml', 'text/xml']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'text/json', 'application/xml', 'text/xml'],
+                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation orderValidateAsync
+     *
+     * Validate the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     *
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest
+     */
+    public function orderValidateAsync($order_request)
+    {
+        list($response) = $this->orderValidateAsyncWithHttpInfo($order_request);
+        return $response;
+    }
+
+    /**
+     * Operation orderValidateAsyncWithHttpInfo
+     *
+     * Validate the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     *
+     * @throws \Horrentotaal\HamstraApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderValidateAsyncWithHttpInfo($order_request)
+    {
+        $returnType = '\Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest';
+        $request = $this->orderValidateAsyncRequest($order_request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Horrentotaal\HamstraApi\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderValidateAsyncAsync
+     *
+     * Validate the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderValidateAsyncAsync($order_request)
+    {
+        return $this->orderValidateAsyncAsyncWithHttpInfo($order_request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation orderValidateAsyncAsyncWithHttpInfo
+     *
+     * Validate the order
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderValidateAsyncAsyncWithHttpInfo($order_request)
+    {
+        $returnType = '\Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest';
+        $request = $this->orderValidateAsyncRequest($order_request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'orderValidateAsync'
+     *
+     * @param  \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function orderValidateAsyncRequest($order_request)
+    {
+        // verify the required parameter 'order_request' is set
+        if ($order_request === null || (is_array($order_request) && count($order_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_request when calling orderValidateAsync'
+            );
+        }
+
+        $resourcePath = '/api/order/validate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($order_request)) {
+            $_tempBody = $order_request;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'text/json', 'application/xml', 'text/xml']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'text/json', 'application/xml', 'text/xml'],
+                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apiKey');
+        if ($apiKey !== null) {
+            $headers['apiKey'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

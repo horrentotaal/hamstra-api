@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **without_discount** | **bool** |  | [optional] 
 **customer_id** | **int** |  | [optional] 
 **organisation_id** | **int** |  | [optional] 
-**options** | [**\Swagger\Client\Model\HamstraAPIModelsProductsOptionConfig[]**](HamstraAPIModelsProductsOptionConfig.md) |  | [optional] 
+**options** | [**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsProductsOptionConfig[]**](HamstraAPIModelsProductsOptionConfig.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

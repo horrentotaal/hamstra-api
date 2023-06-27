@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Horrentotaal\HamstraApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Horrentotaal\HamstraApi\ObjectSerializer;
 
 /**
  * SystemThreadingWaitHandle Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class SystemThreadingWaitHandle implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'handle' => 'object',
-        'safe_wait_handle' => '\Swagger\Client\Model\MicrosoftWin32SafeHandlesSafeWaitHandle'
+        'safe_wait_handle' => '\Horrentotaal\HamstraApi\Model\MicrosoftWin32SafeHandlesSafeWaitHandle'
     ];
 
     /**
@@ -237,7 +237,7 @@ class SystemThreadingWaitHandle implements ModelInterface, ArrayAccess
     /**
      * Gets safe_wait_handle
      *
-     * @return \Swagger\Client\Model\MicrosoftWin32SafeHandlesSafeWaitHandle
+     * @return \Horrentotaal\HamstraApi\Model\MicrosoftWin32SafeHandlesSafeWaitHandle
      */
     public function getSafeWaitHandle()
     {
@@ -247,7 +247,7 @@ class SystemThreadingWaitHandle implements ModelInterface, ArrayAccess
     /**
      * Sets safe_wait_handle
      *
-     * @param \Swagger\Client\Model\MicrosoftWin32SafeHandlesSafeWaitHandle $safe_wait_handle safe_wait_handle
+     * @param \Horrentotaal\HamstraApi\Model\MicrosoftWin32SafeHandlesSafeWaitHandle $safe_wait_handle safe_wait_handle
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Horrentotaal\HamstraApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Horrentotaal\HamstraApi\ObjectSerializer;
 
 /**
  * SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericLi
       */
     protected static $swaggerTypes = [
         'key' => 'object',
-        'value' => '\Swagger\Client\Model\HamstraAPIServicesOrderValidationMessage[]'
+        'value' => '\Horrentotaal\HamstraApi\Model\HamstraAPIServicesOrderValidationMessage[]'
     ];
 
     /**
@@ -237,7 +237,7 @@ class SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericLi
     /**
      * Gets value
      *
-     * @return \Swagger\Client\Model\HamstraAPIServicesOrderValidationMessage[]
+     * @return \Horrentotaal\HamstraApi\Model\HamstraAPIServicesOrderValidationMessage[]
      */
     public function getValue()
     {
@@ -247,7 +247,7 @@ class SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericLi
     /**
      * Sets value
      *
-     * @param \Swagger\Client\Model\HamstraAPIServicesOrderValidationMessage[] $value value
+     * @param \Horrentotaal\HamstraApi\Model\HamstraAPIServicesOrderValidationMessage[] $value value
      *
      * @return $this
      */

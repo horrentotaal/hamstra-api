@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **color** | **string** |  | [optional] 
 **customer_description** | **string** |  | [optional] 
 **customer_reference** | **string** |  | [optional] 
-**order_line_options** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderLineOptionRequest[]**](HamstraAPIModelsOrdersOrderLineOptionRequest.md) |  | [optional] 
+**order_line_options** | [**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderLineOptionRequest[]**](HamstraAPIModelsOrdersOrderLineOptionRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

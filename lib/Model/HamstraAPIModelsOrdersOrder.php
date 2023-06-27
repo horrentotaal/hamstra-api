@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Horrentotaal\HamstraApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \Horrentotaal\HamstraApi\ObjectSerializer;
 
 /**
  * HamstraAPIModelsOrdersOrder Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Horrentotaal\HamstraApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -88,7 +88,7 @@ class HamstraAPIModelsOrdersOrder implements ModelInterface, ArrayAccess
         'last_modified' => '\DateTime',
         'approved' => 'bool',
         'organisation' => 'int',
-        'order_lines' => '\Swagger\Client\Model\HamstraAPIModelsOrdersOrderLine[]'
+        'order_lines' => '\Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderLine[]'
     ];
 
     /**
@@ -1137,7 +1137,7 @@ class HamstraAPIModelsOrdersOrder implements ModelInterface, ArrayAccess
     /**
      * Gets order_lines
      *
-     * @return \Swagger\Client\Model\HamstraAPIModelsOrdersOrderLine[]
+     * @return \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderLine[]
      */
     public function getOrderLines()
     {
@@ -1147,7 +1147,7 @@ class HamstraAPIModelsOrdersOrder implements ModelInterface, ArrayAccess
     /**
      * Sets order_lines
      *
-     * @param \Swagger\Client\Model\HamstraAPIModelsOrdersOrderLine[] $order_lines order_lines
+     * @param \Horrentotaal\HamstraApi\Model\HamstraAPIModelsOrdersOrderLine[] $order_lines order_lines
      *
      * @return $this
      */

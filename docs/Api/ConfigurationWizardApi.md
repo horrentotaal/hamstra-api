@@ -1,4 +1,4 @@
-# Swagger\Client\ConfigurationWizardApi
+# Horrentotaal\HamstraApi\ConfigurationWizardApi
 
 All URIs are relative to *https://staging.api.hamstraonline.vmcluster.nl*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **configurationWizardGet**
-> \Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[] configurationWizardGet($language)
+> \Horrentotaal\HamstraApi\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[] configurationWizardGet($language)
 
 Get embedurl for customer based on APIkey authentication
 
@@ -18,11 +18,11 @@ Get embedurl for customer based on APIkey authentication
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
+$config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKey('apiKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
+// $config = Horrentotaal\HamstraApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apiKey', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\ConfigurationWizardApi(
+$apiInstance = new Horrentotaal\HamstraApi\Api\ConfigurationWizardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]**](../Model/HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl.md)
+[**\Horrentotaal\HamstraApi\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]**](../Model/HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl.md)
 
 ### Authorization
 
