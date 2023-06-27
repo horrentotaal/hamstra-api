@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **product_option_group_id** | **int** |  | [optional] 
 **measurement_instructions** | **string** |  | [optional] 
 **measurement_image_reference** | **string** |  | [optional] 
-**values** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetailOptionValue[]**](HamstraAPIModelsProductsProductDetailOptionValue.md) |  | [optional] 
+**values** | [**\Swagger\Client\Model\HamstraAPIModelsProductsProductDetailOptionValue[]**](HamstraAPIModelsProductsProductDetailOptionValue.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

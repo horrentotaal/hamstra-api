@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **customer_reference** | **string** |  | [optional] 
 **fixed_price** | **double** |  | [optional] 
 **ext_bruto_price** | **double** |  | [optional] 
-**order_line_options** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderLineOption[]**](HamstraAPIModelsOrdersOrderLineOption.md) |  | [optional] 
+**order_line_options** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderLineOption[]**](HamstraAPIModelsOrdersOrderLineOption.md) |  | [optional] 
 **calculated_price** | **double** |  | [optional] 
 **product_name** | **string** |  | [optional] 
 

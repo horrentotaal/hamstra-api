@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Horrentotaal\Hamstra\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
-use \Horrentotaal\Hamstra\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * HamstraAPIModelsOrdersOrderLineRequest Class Doc Comment
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -64,7 +64,7 @@ class HamstraAPIModelsOrdersOrderLineRequest implements ModelInterface, ArrayAcc
         'color' => 'string',
         'customer_description' => 'string',
         'customer_reference' => 'string',
-        'order_line_options' => '\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderLineOptionRequest[]'
+        'order_line_options' => '\Swagger\Client\Model\HamstraAPIModelsOrdersOrderLineOptionRequest[]'
     ];
 
     /**
@@ -423,7 +423,7 @@ class HamstraAPIModelsOrdersOrderLineRequest implements ModelInterface, ArrayAcc
     /**
      * Gets order_line_options
      *
-     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderLineOptionRequest[]
+     * @return \Swagger\Client\Model\HamstraAPIModelsOrdersOrderLineOptionRequest[]
      */
     public function getOrderLineOptions()
     {
@@ -433,7 +433,7 @@ class HamstraAPIModelsOrdersOrderLineRequest implements ModelInterface, ArrayAcc
     /**
      * Sets order_line_options
      *
-     * @param \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderLineOptionRequest[] $order_line_options order_line_options
+     * @param \Swagger\Client\Model\HamstraAPIModelsOrdersOrderLineOptionRequest[] $order_line_options order_line_options
      *
      * @return $this
      */

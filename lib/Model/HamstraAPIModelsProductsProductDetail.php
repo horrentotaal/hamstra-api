@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Horrentotaal\Hamstra\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
-use \Horrentotaal\Hamstra\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * HamstraAPIModelsProductsProductDetail Class Doc Comment
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -67,7 +67,7 @@ class HamstraAPIModelsProductsProductDetail implements ModelInterface, ArrayAcce
         'is_customized_product' => 'bool',
         'measurement_instructions_image' => 'string',
         'measurement_instructions' => 'string',
-        'options' => '\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetailOption[]',
+        'options' => '\Swagger\Client\Model\HamstraAPIModelsProductsProductDetailOption[]',
         'sort_nr' => 'int'
     ];
 
@@ -513,7 +513,7 @@ class HamstraAPIModelsProductsProductDetail implements ModelInterface, ArrayAcce
     /**
      * Gets options
      *
-     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetailOption[]
+     * @return \Swagger\Client\Model\HamstraAPIModelsProductsProductDetailOption[]
      */
     public function getOptions()
     {
@@ -523,7 +523,7 @@ class HamstraAPIModelsProductsProductDetail implements ModelInterface, ArrayAcce
     /**
      * Sets options
      *
-     * @param \Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetailOption[] $options options
+     * @param \Swagger\Client\Model\HamstraAPIModelsProductsProductDetailOption[] $options options
      *
      * @return $this
      */

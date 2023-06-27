@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **is_customized_product** | **bool** |  | [optional] 
 **measurement_instructions_image** | **string** |  | [optional] 
 **measurement_instructions** | **string** |  | [optional] 
-**options** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductDetailOption[]**](HamstraAPIModelsProductsProductDetailOption.md) |  | [optional] 
+**options** | [**\Swagger\Client\Model\HamstraAPIModelsProductsProductDetailOption[]**](HamstraAPIModelsProductsProductDetailOption.md) |  | [optional] 
 **sort_nr** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

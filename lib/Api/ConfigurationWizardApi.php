@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Horrentotaal\Hamstra\Api;
+namespace Swagger\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Horrentotaal\Hamstra\ApiException;
-use Horrentotaal\Hamstra\Configuration;
-use Horrentotaal\Hamstra\HeaderSelector;
-use Horrentotaal\Hamstra\ObjectSerializer;
+use Swagger\Client\ApiException;
+use Swagger\Client\Configuration;
+use Swagger\Client\HeaderSelector;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ConfigurationWizardApi Class Doc Comment
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -94,9 +94,9 @@ class ConfigurationWizardApi
      *
      * @param  string $language ISO 639-1 code for language. Currently supported: nl and fr (optional)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]
+     * @return \Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]
      */
     public function configurationWizardGet($language = null)
     {
@@ -111,13 +111,13 @@ class ConfigurationWizardApi
      *
      * @param  string $language ISO 639-1 code for language. Currently supported: nl and fr (optional)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[], HTTP status code, HTTP response headers (array of strings)
      */
     public function configurationWizardGetWithHttpInfo($language = null)
     {
-        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]';
+        $returnType = '\Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]';
         $request = $this->configurationWizardGetRequest($language);
 
         try {
@@ -169,7 +169,7 @@ class ConfigurationWizardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]',
+                        '\Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -211,7 +211,7 @@ class ConfigurationWizardApi
      */
     public function configurationWizardGetAsyncWithHttpInfo($language = null)
     {
-        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]';
+        $returnType = '\Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardEmbedUrl[]';
         $request = $this->configurationWizardGetRequest($language);
 
         return $this->client

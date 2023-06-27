@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **last_modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **approved** | **bool** |  | [optional] 
 **organisation** | **int** |  | [optional] 
-**order_lines** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderLine[]**](HamstraAPIModelsOrdersOrderLine.md) |  | [optional] 
+**order_lines** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderLine[]**](HamstraAPIModelsOrdersOrderLine.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Horrentotaal\Hamstra\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
-use \Horrentotaal\Hamstra\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * HamstraAPIModelsQuotationsViewQuotation Class Doc Comment
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -69,7 +69,7 @@ class HamstraAPIModelsQuotationsViewQuotation implements ModelInterface, ArrayAc
         'delivery_city' => 'string',
         'delivery_country' => 'string',
         'status' => 'int',
-        'quotation_lines' => '\Horrentotaal\Hamstra\Model\HamstraAPIModelsQuotationsViewQuotationLine[]'
+        'quotation_lines' => '\Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotationLine[]'
     ];
 
     /**
@@ -567,7 +567,7 @@ class HamstraAPIModelsQuotationsViewQuotation implements ModelInterface, ArrayAc
     /**
      * Gets quotation_lines
      *
-     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsQuotationsViewQuotationLine[]
+     * @return \Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotationLine[]
      */
     public function getQuotationLines()
     {
@@ -577,7 +577,7 @@ class HamstraAPIModelsQuotationsViewQuotation implements ModelInterface, ArrayAc
     /**
      * Sets quotation_lines
      *
-     * @param \Horrentotaal\Hamstra\Model\HamstraAPIModelsQuotationsViewQuotationLine[] $quotation_lines quotation_lines
+     * @param \Swagger\Client\Model\HamstraAPIModelsQuotationsViewQuotationLine[] $quotation_lines quotation_lines
      *
      * @return $this
      */

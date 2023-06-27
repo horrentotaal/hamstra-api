@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Horrentotaal\Hamstra\Api;
+namespace Swagger\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Horrentotaal\Hamstra\ApiException;
-use Horrentotaal\Hamstra\Configuration;
-use Horrentotaal\Hamstra\HeaderSelector;
-use Horrentotaal\Hamstra\ObjectSerializer;
+use Swagger\Client\ApiException;
+use Swagger\Client\Configuration;
+use Swagger\Client\HeaderSelector;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * OrderApi Class Doc Comment
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,9 +92,9 @@ class OrderApi
      *
      * Creates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -109,9 +109,9 @@ class OrderApi
      *
      * Creates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -177,7 +177,7 @@ class OrderApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Horrentotaal\Hamstra\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
+                        '\Swagger\Client\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -192,7 +192,7 @@ class OrderApi
      *
      * Creates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -212,7 +212,7 @@ class OrderApi
      *
      * Creates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -262,7 +262,7 @@ class OrderApi
     /**
      * Create request for operation 'orderCreateOrderAsync'
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -369,9 +369,9 @@ class OrderApi
      *
      * Creates an order for the given quotation
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -386,9 +386,9 @@ class OrderApi
      *
      * Creates an order for the given quotation
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -469,7 +469,7 @@ class OrderApi
      *
      * Creates an order for the given quotation
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -489,7 +489,7 @@ class OrderApi
      *
      * Creates an order for the given quotation
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -539,7 +539,7 @@ class OrderApi
     /**
      * Create request for operation 'orderOrderQuotationAsync'
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderQuotation $order_quotation The quotations to order (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -646,9 +646,9 @@ class OrderApi
      *
      * Creates a quotation for the given order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -663,9 +663,9 @@ class OrderApi
      *
      * Creates a quotation for the given order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -746,7 +746,7 @@ class OrderApi
      *
      * Creates a quotation for the given order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -766,7 +766,7 @@ class OrderApi
      *
      * Creates a quotation for the given order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -816,7 +816,7 @@ class OrderApi
     /**
      * Create request for operation 'orderSaveAsQuotation'
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to quote (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -923,9 +923,9 @@ class OrderApi
      *
      * Creates or updates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -940,9 +940,9 @@ class OrderApi
      *
      * Creates or updates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1008,7 +1008,7 @@ class OrderApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Horrentotaal\Hamstra\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
+                        '\Swagger\Client\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1023,7 +1023,7 @@ class OrderApi
      *
      * Creates or updates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1043,7 +1043,7 @@ class OrderApi
      *
      * Creates or updates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1093,7 +1093,7 @@ class OrderApi
     /**
      * Create request for operation 'orderSaveOrderAsync'
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to create/update (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1200,9 +1200,9 @@ class OrderApi
      *
      * Updates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -1217,9 +1217,9 @@ class OrderApi
      *
      * Updates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1285,7 +1285,7 @@ class OrderApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Horrentotaal\Hamstra\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
+                        '\Swagger\Client\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1300,7 +1300,7 @@ class OrderApi
      *
      * Updates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1320,7 +1320,7 @@ class OrderApi
      *
      * Updates the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1370,7 +1370,7 @@ class OrderApi
     /**
      * Create request for operation 'orderUpdateOrderAsync'
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request The order to update (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1477,11 +1477,11 @@ class OrderApi
      *
      * Validate the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest
+     * @return \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest
      */
     public function orderValidateAsync($order_request)
     {
@@ -1494,15 +1494,15 @@ class OrderApi
      *
      * Validate the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
      *
-     * @throws \Horrentotaal\Hamstra\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderValidateAsyncWithHttpInfo($order_request)
     {
-        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest';
+        $returnType = '\Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest';
         $request = $this->orderValidateAsyncRequest($order_request);
 
         try {
@@ -1554,7 +1554,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest',
+                        '\Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1562,7 +1562,7 @@ class OrderApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Horrentotaal\Hamstra\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
+                        '\Swagger\Client\Model\SystemCollectionsGenericKeyValuePairSystemObjectSystemCollectionsGenericListHamstraAPIServicesOrderValidationMessage[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1577,7 +1577,7 @@ class OrderApi
      *
      * Validate the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1597,14 +1597,14 @@ class OrderApi
      *
      * Validate the order
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function orderValidateAsyncAsyncWithHttpInfo($order_request)
     {
-        $returnType = '\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest';
+        $returnType = '\Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest';
         $request = $this->orderValidateAsyncRequest($order_request);
 
         return $this->client
@@ -1647,7 +1647,7 @@ class OrderApi
     /**
      * Create request for operation 'orderValidateAsync'
      *
-     * @param  \Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
+     * @param  \Swagger\Client\Model\HamstraAPIModelsOrdersOrderRequest $order_request  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

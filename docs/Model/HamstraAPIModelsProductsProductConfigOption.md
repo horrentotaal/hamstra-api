@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **measurement_instructions** | **string** |  | [optional] 
 **measurement_image_reference** | **string** |  | [optional] 
 **value** | **object** |  | [optional] 
-**values** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsProductsProductConfigOptionValue[]**](HamstraAPIModelsProductsProductConfigOptionValue.md) |  | [optional] 
+**values** | [**\Swagger\Client\Model\HamstraAPIModelsProductsProductConfigOptionValue[]**](HamstraAPIModelsProductsProductConfigOptionValue.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

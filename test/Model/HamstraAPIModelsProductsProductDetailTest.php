@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,14 +27,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace Horrentotaal\Hamstra;
+namespace Swagger\Client;
 
 /**
  * HamstraAPIModelsProductsProductDetailTest Class Doc Comment
  *
  * @category    Class
  * @description HamstraAPIModelsProductsProductDetail
- * @package     Horrentotaal\Hamstra
+ * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

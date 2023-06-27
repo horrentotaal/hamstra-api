@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,17 +26,17 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace Horrentotaal\Hamstra;
+namespace Swagger\Client;
 
-use \Horrentotaal\Hamstra\Configuration;
-use \Horrentotaal\Hamstra\ApiException;
-use \Horrentotaal\Hamstra\ObjectSerializer;
+use \Swagger\Client\Configuration;
+use \Swagger\Client\ApiException;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * OrderApiTest Class Doc Comment
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

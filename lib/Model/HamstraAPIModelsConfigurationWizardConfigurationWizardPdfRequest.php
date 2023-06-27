@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Horrentotaal\Hamstra\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
-use \Horrentotaal\Hamstra\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * HamstraAPIModelsConfigurationWizardConfigurationWizardPdfRequest Class Doc Comment
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class HamstraAPIModelsConfigurationWizardConfigurationWizardPdfRequest implement
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'state' => '\Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardState',
+        'state' => '\Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardState',
         'quotation_id' => 'int'
     ];
 
@@ -213,7 +213,7 @@ class HamstraAPIModelsConfigurationWizardConfigurationWizardPdfRequest implement
     /**
      * Gets state
      *
-     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardState
+     * @return \Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardState
      */
     public function getState()
     {
@@ -223,7 +223,7 @@ class HamstraAPIModelsConfigurationWizardConfigurationWizardPdfRequest implement
     /**
      * Sets state
      *
-     * @param \Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardState $state state
+     * @param \Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardState $state state
      *
      * @return $this
      */

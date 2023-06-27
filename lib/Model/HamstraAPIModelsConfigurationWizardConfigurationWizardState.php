@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Horrentotaal\Hamstra\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
-use \Horrentotaal\Hamstra\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * HamstraAPIModelsConfigurationWizardConfigurationWizardState Class Doc Comment
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class HamstraAPIModelsConfigurationWizardConfigurationWizardState implements Mod
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'step_values' => '\Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue[]',
+        'step_values' => '\Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue[]',
         'product_id' => 'int',
         'product_option_group_id' => 'int',
         'option_values' => 'map[string,string]'
@@ -225,7 +225,7 @@ class HamstraAPIModelsConfigurationWizardConfigurationWizardState implements Mod
     /**
      * Gets step_values
      *
-     * @return \Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue[]
+     * @return \Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue[]
      */
     public function getStepValues()
     {
@@ -235,7 +235,7 @@ class HamstraAPIModelsConfigurationWizardConfigurationWizardState implements Mod
     /**
      * Sets step_values
      *
-     * @param \Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue[] $step_values step_values
+     * @param \Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue[] $step_values step_values
      *
      * @return $this
      */

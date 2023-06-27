@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**step_values** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue[]**](HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue.md) |  | [optional] 
+**step_values** | [**\Swagger\Client\Model\HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue[]**](HamstraAPIModelsConfigurationWizardConfigurationWizardStepValue.md) |  | [optional] 
 **product_id** | **int** |  | [optional] 
 **product_option_group_id** | **int** |  | [optional] 
 **option_values** | **map[string,string]** |  | [optional] 

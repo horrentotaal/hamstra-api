@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Horrentotaal\Hamstra\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
-use \Horrentotaal\Hamstra\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * SystemThreadingCancellationToken Class Doc Comment
  *
  * @category Class
- * @package  Horrentotaal\Hamstra
+ * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class SystemThreadingCancellationToken implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'is_cancellation_requested' => 'bool',
         'can_be_canceled' => 'bool',
-        'wait_handle' => '\Horrentotaal\Hamstra\Model\SystemThreadingWaitHandle'
+        'wait_handle' => '\Swagger\Client\Model\SystemThreadingWaitHandle'
     ];
 
     /**
@@ -267,7 +267,7 @@ class SystemThreadingCancellationToken implements ModelInterface, ArrayAccess
     /**
      * Gets wait_handle
      *
-     * @return \Horrentotaal\Hamstra\Model\SystemThreadingWaitHandle
+     * @return \Swagger\Client\Model\SystemThreadingWaitHandle
      */
     public function getWaitHandle()
     {
@@ -277,7 +277,7 @@ class SystemThreadingCancellationToken implements ModelInterface, ArrayAccess
     /**
      * Sets wait_handle
      *
-     * @param \Horrentotaal\Hamstra\Model\SystemThreadingWaitHandle $wait_handle wait_handle
+     * @param \Swagger\Client\Model\SystemThreadingWaitHandle $wait_handle wait_handle
      *
      * @return $this
      */

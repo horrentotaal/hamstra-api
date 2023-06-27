@@ -1,6 +1,5 @@
 {
-    "name": "horrentotaal/HamstraApi",
-    "version": "3.1.0",
+    "name": "horrentotaal/hamstra-api",
     "description": "",
     "keywords": [
         "swagger",
@@ -29,9 +28,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "Horrentotaal\\Hamstra\\" : "lib/" }
+        "psr-4": { "Swagger\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Horrentotaal\\Hamstra\\" : "test/" }
+        "psr-4": { "Swagger\\Client\\" : "test/" }
     }
 }

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **delivery_phone** | **string** |  | [optional] 
 **mail_html** | **string** |  | [optional] 
 **buffer** | **int** |  | [optional] 
-**order_lines** | [**\Horrentotaal\Hamstra\Model\HamstraAPIModelsOrdersOrderLineRequest[]**](HamstraAPIModelsOrdersOrderLineRequest.md) |  | 
+**order_lines** | [**\Swagger\Client\Model\HamstraAPIModelsOrdersOrderLineRequest[]**](HamstraAPIModelsOrdersOrderLineRequest.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

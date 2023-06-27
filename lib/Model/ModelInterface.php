@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Horrentotaal\Hamstra\Model
+ * @package  Swagger\Client\Model
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,12 +27,12 @@
  * Do not edit the class manually.
  */
 
-namespace Horrentotaal\Hamstra\Model;
+namespace Swagger\Client\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Horrentotaal\Hamstra\Model
+ * @package Swagger\Client\Model
  * @author  Swagger Codegen team
  */
 interface ModelInterface
