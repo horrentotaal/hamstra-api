@@ -1,0 +1,24 @@
+{
+  "name": "@horrentotaal/hamstra-api",
+  "version": "5.0.1",
+  "description": "Horrentotaal hamstra API",
+  "publishConfig": {
+    "@ThomasKammen:registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "Yorway",
+  "license": "ISC",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horrentotaal/hamstra-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/horrentotaal/hamstra-api/issues"
+  },
+  "homepage": "https://github.com/horrentotaal/hamstra-api#readme"
+}
